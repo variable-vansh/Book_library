@@ -58,6 +58,14 @@ function displayBooks() {
             }
         }
 
+        // create td elements for buttons
+        const changeButtonTd = document.createElement("td");
+        const removeButtonTd = document.createElement("td");
+
+        // append buttons to their respective td elements
+        changeButtonTd.appendChild(changeButton);
+        removeButtonTd.appendChild(removeButton);
+
         //create all the data boxes
         const titleBox = document.createElement("td");
         const authorBox = document.createElement("td");
@@ -69,8 +77,8 @@ function displayBooks() {
         newLine.appendChild(authorBox);
         newLine.appendChild(pagesBox);
         newLine.appendChild(readBox);
-        newLine.appendChild(changeButton);
-        newLine.appendChild(removeButton);
+        newLine.appendChild(changeButtonTd);
+        newLine.appendChild(removeButtonTd);
 
         //filling in the boxes
         titleBox.innerHTML = book.title;
