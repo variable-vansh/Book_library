@@ -1,0 +1,32 @@
+/* basic style to table */
+table {
+    border-collapse: collapse;
+}
+
+td,
+th {
+    border: 1px solid #999;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+button {
+    width: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    /* background-color: ; */
+}
+
+
+form>div {
+    padding: 10px;
+}
+
+form {
+    padding: 10px;
+}

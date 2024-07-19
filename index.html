@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="content">
+        <h1>Book Library</h1>
+        <table>
+            <colgroup>
+
+            </colgroup>
+            <thead>
+                <tr>
+                    <th rowspan="2">Title</th>
+                    <th rowspan="2">Author</th>
+                    <th rowspan="2">Pages</th>
+                    <th colspan="2">Read?</th>
+                    <th rowspan="2">Remove?</th>
+                </tr>
+                <tr>
+                    <th>Status</th>
+                    <th>Change</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+        <!-- to add new books -->
+        <!-- A modal dialog containing a form -->
+        <!-- A modal dialog containing a form -->
+        <dialog id="favDialog">
+            <form>
+                <div class="inputBox">
+                    <label for="inputTitle">
+                        <span>Title: </span>
+                        <strong><span aria-label="required"></span></strong>
+                    </label>
+                    <input type="text" id="inputTitle" name="inputTitle" />
+                </div>
+
+                <div>
+                    <label for="inputAuthor">
+                        <span>Author: </span>
+                        <strong><span aria-label="required"></span></strong>
+                    </label>
+                    <input type="text" id="inputAuthor" name="inputAuthor" />
+                </div>
+
+                <div>
+                    <label for="inputPages">
+                        <span>Pages: </span>
+                        <strong><span aria-label="required"></span></strong>
+                    </label>
+                    <input type="text" id="inputPages" name="inputPages" />
+                </div>
+
+                <div>
+                    <label for="inputRead">
+                        <span>Read?: </span>
+                        <strong><span aria-label="required"></span></strong>
+                    </label>
+                    <input type="text" id="inputRead" name="inputRead" />
+                </div>
+                <div>
+                    <button id="confirmBtn" value="default">Confirm</button>
+                    <button value="cancel" formmethod="dialog">Cancel</button>
+                </div>
+            </form>
+        </dialog>
+        <p>
+            <button id="showDialog">Add New</button>
+        </p>
+        <output></output>
+
+    </div>
+
+
+
+
+    <script src="exercise.js"></script>
+</body>
+
+</html>
