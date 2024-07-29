@@ -28,12 +28,12 @@ function displayBooks() {
         //added that row to the table
         tBody.appendChild(newLine)
 
-        //create remoce button
+        //create remove button
         let removeButton = document.createElement("button");
         removeButton.innerText = "remove";
 
         //add remove class to it
-        removeButton.classList.add("remove");
+        // removeButton.classList.add("remove");
 
         //add event Listener to it
         removeButton.onclick = () => {
@@ -99,7 +99,6 @@ function addBookToLibrary(title, author, pages, read) {
 //popup form stuff
 const showButton = document.getElementById("showDialog");
 const favDialog = document.getElementById("favDialog");
-const outputBox = document.querySelector("output");
 
 const newTitle = favDialog.querySelector("#inputTitle");
 const newAuthor = favDialog.querySelector("#inputAuthor");

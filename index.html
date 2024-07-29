@@ -12,9 +12,9 @@
     <div class="content">
         <h1>Book Library</h1>
         <table>
-            <colgroup>
+            <!-- <colgroup>
 
-            </colgroup>
+            </colgroup> -->
             <thead>
                 <tr>
                     <th rowspan="2">Title</th>
@@ -32,10 +32,12 @@
 
             </tbody>
         </table>
+
         <!-- to add new books -->
         <!-- A modal dialog containing a form -->
-        <dialog id="favDialog">
+        <dialog id="favDialog" class="modal">
             <form>
+
                 <div class="inputBox">
                     <label for="inputTitle">
                         <span>Title: </span>
@@ -67,22 +69,19 @@
                     </label>
                     <input type="text" id="inputRead" name="inputRead" />
                 </div>
+
                 <div>
                     <button id="confirmBtn" value="default">Confirm</button>
                     <button value="cancel" formmethod="dialog">Cancel</button>
                 </div>
+
             </form>
         </dialog>
         <p>
             <button id="showDialog">Add New</button>
         </p>
-        <output></output>
 
     </div>
-
-
-
-
     <script src="exercise.js"></script>
 </body>
 
