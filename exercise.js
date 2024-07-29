@@ -1,12 +1,17 @@
-// constructor, prototype whatever
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-    this.bookNumber = bookCounter;
-    this.info = function () {
-        return `${title} by ${author}, ${pages} pages, ${read}`
+
+
+class Book {
+    myLibrary = [];
+    static bookCounter = 0;
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+        this.bookNumber = bookCounter;
+        this.info = function () {
+            return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`
+        }
     }
 }
 
@@ -126,10 +131,6 @@ confirmBtn.addEventListener("click", (event) => {
     favDialog.close();
 
 });
-
-
-
-
 
 
 
