@@ -1,31 +1,30 @@
 /* basic style to table */
 table {
-    border-collapse: collapse;
+  border-collapse: collapse;
 }
 
 td,
 th {
-    border: 1px solid #999;
-    padding: 0.5rem;
-    text-align: center;
+  border: 1px solid #999;
+  padding: 0.5rem;
+  text-align: center;
 }
 
 button {
-    width: 100%;
+  width: 100%;
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
 }
 
-
-form>div {
-    padding: 5px;
+form > div {
+  padding: 5px;
 }
 
 form {
-    padding: 10px;
+  padding: 10px;
 }

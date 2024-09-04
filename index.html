@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Books record</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
@@ -28,59 +28,55 @@
                     <th>Change</th>
                 </tr>
             </thead>
-            <tbody>
-
-            </tbody>
+            <tbody></tbody>
         </table>
 
         <!-- to add new books -->
         <!-- A modal dialog containing a form -->
         <dialog id="favDialog" class="modal">
             <form>
-
                 <div class="inputBox">
                     <label for="inputTitle">
                         <span>Title: </span>
-                        <strong><span aria-label="required"></span></strong>
+                        <!-- <strong><span aria-label="required"></span></strong> -->
                     </label>
-                    <input type="text" id="inputTitle" name="inputTitle" />
+                    <input type="text" id="inputTitle" name="inputTitle" required />
                 </div>
 
                 <div>
                     <label for="inputAuthor">
                         <span>Author: </span>
-                        <strong><span aria-label="required"></span></strong>
+                        <!-- <strong><span aria-label="required"></span></strong> -->
                     </label>
-                    <input type="text" id="inputAuthor" name="inputAuthor" />
+                    <input type="text" id="inputAuthor" name="inputAuthor" required />
                 </div>
 
                 <div>
                     <label for="inputPages">
                         <span>Pages: </span>
-                        <strong><span aria-label="required"></span></strong>
+                        <!-- <strong><span aria-label="required"></span></strong> -->
                     </label>
-                    <input type="text" id="inputPages" name="inputPages" />
+                    <input type="number" id="inputPages" name="inputPages" required />
                 </div>
 
                 <div>
                     <label for="inputRead">
                         <span>Read?: </span>
-                        <strong><span aria-label="required"></span></strong>
+                        <!-- <strong><span aria-label="required"></span></strong> -->
                     </label>
-                    <input type="text" id="inputRead" name="inputRead" />
+                    <input type="text" id="inputRead" name="inputRead" required />
                 </div>
 
                 <div>
-                    <button id="confirmBtn" value="default">Confirm</button>
-                    <button value="cancel" formmethod="dialog">Cancel</button>
+                    <button type="submit" id="confirmBtn" value="default" formmethod="dialog">Confirm</button>
+                    <button type="button" id="cancelBtn" value="cancel" formmethod="dialog">Cancel</button>
                 </div>
-
             </form>
         </dialog>
+
         <p>
             <button id="showDialog">Add New</button>
         </p>
-
     </div>
     <script src="exercise.js"></script>
 </body>

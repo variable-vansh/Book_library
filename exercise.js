@@ -1,5 +1,3 @@
-
-
 class Book {
     myLibrary = [];
     static bookCounter = 0;
@@ -10,8 +8,8 @@ class Book {
         this.read = read;
         this.bookNumber = bookCounter;
         this.info = function () {
-            return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`
-        }
+            return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`;
+        };
     }
 }
 
@@ -27,11 +25,10 @@ function displayBooks() {
     tBody.innerHTML = "";
 
     for (let book of myLibrary) {
-
         //made a new row
-        const newLine = document.createElement("tr")
+        const newLine = document.createElement("tr");
         //added that row to the table
-        tBody.appendChild(newLine)
+        tBody.appendChild(newLine);
 
         //create remove button
         let removeButton = document.createElement("button");
@@ -46,7 +43,7 @@ function displayBooks() {
             myLibrary.splice(book.bookNumber, 1);
             bookCounter--;
             newLine.innerHTML = "";
-        }
+        };
 
         //create button to change read status
         let changeButton = document.createElement("button");
@@ -59,9 +56,9 @@ function displayBooks() {
                 displayBooks();
             } else {
                 book.read = "no";
-                displayBooks()
+                displayBooks();
             }
-        }
+        };
 
         // create td elements for buttons
         const changeButtonTd = document.createElement("td");
@@ -98,7 +95,7 @@ let bookCounter = 0;
 
 function addBookToLibrary(title, author, pages, read) {
     bookCounter++;
-    myLibrary[bookCounter - 1] = new Book(title, author, pages, read);;
+    myLibrary[bookCounter - 1] = new Book(title, author, pages, read);
 }
 
 //popup form stuff
@@ -111,27 +108,58 @@ const newPages = favDialog.querySelector("#inputPages");
 const newRead = favDialog.querySelector("#inputRead");
 
 const confirmBtn = favDialog.querySelector("#confirmBtn");
+const cancelBtn = favDialog.querySelector("#cancelBtn");
 
 // opens up dialog form
 showButton.addEventListener("click", () => {
     favDialog.showModal();
 });
 
-
 // Prevent the "confirm" button from the default behavior of submitting the form, and close the dialog with the `close()` method, which triggers the "close" event.
 confirmBtn.addEventListener("click", (event) => {
-
     event.preventDefault(); // We don't want to submit this fake form
 
-    //put title, author, pages, read msg together to make new book object
-    addBookToLibrary(newTitle.value, newAuthor.value, newPages.value, newRead.value)
-    displayBooks()
 
-    //closes the dialog box
-    favDialog.close();
+    let validation = 0;
+    let inputs = document.querySelectorAll("input");
+
+    inputs.forEach(input => {
+        // console.log(input.validity)
+        if (!input.validity.valid) {
+            validation = 1;
+            input.reportValidity();
+        }
+
+    });
+
+    if (validation == 0) {
+        //put title, author, pages, read msg together to make new book object
+        addBookToLibrary(
+            newTitle.value,
+            newAuthor.value,
+            newPages.value,
+            newRead.value,
+        );
+        displayBooks();
+
+        newTitle.value = ""
+        newAuthor.value = ""
+        newPages.value = ""
+        newRead.value = ""
+        //closes the dialog box
+        favDialog.close();
+    }
 
 });
 
+cancelBtn.addEventListener("click", () => {
+    newTitle.value = ""
+    newAuthor.value = ""
+    newPages.value = ""
+    newRead.value = ""
+    //closes the dialog box
+    favDialog.close();
+})
 
 
 
